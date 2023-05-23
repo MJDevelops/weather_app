@@ -1,3 +1,23 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+#nav {
+    @apply flex items-center border-2 border-red-500 h-[10vh] w-[100vw];
+}
+
+#nav .dates {
+    @apply flex flex-col;
+}
+
+#nav .search {
+    @apply justify-self-end;
+}
+
+#nav .search input {
+    @apply rounded-md h-[30px] bg-gray-100 p-7;
+}
+
+#nav .search input:focus {
+    @apply outline outline-black;
+}
