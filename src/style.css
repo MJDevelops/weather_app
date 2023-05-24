@@ -3,29 +3,189 @@
 @import "tailwindcss/utilities";
 
 body {
-    @apply bg-slate-900;
+    background: #141414;
+    height: 100vh;
 }
 
 #nav {
-    @apply flex border-2 gap-10 border-red-500 h-[10vh] w-[100vw];
+    position: relative;
+    @apply flex gap-10 h-[10vh] w-[100vw];
 }
 
 #nav .app-name {
-    @apply flex self-center border justify-self-center border-red-500 ml-[50px];
+    @apply flex self-center justify-self-center ml-[50px];
 }
 
 #nav .dates {
     @apply flex flex-col;
 }
 
-#nav .search {
-    @apply flex self-center border border-red-500 ml-auto;
+.search-btn {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: 1px solid rgb(61, 106, 255);
+    height: 50px;
+    align-self: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: transparent;
+    color: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
 }
 
-#nav .search input {
-    @apply self-center placeholder:italic rounded-md h-[15px] bg-gray-100 p-7;
+.search-btn:hover {
+    background: rgb(61, 106, 255);
+    box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
 }
 
-#nav .search input:focus {
-    @apply outline outline-black;
+.search-btn:hover::before {
+    -webkit-animation: sh02 0.5s 0s linear;
+    -moz-animation: sh02 0.5s 0s linear;
+    animation: sh02 0.5s 0s linear;
+}
+
+.search-btn::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+    from {
+        opacity: 0;
+        left: 0%;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        left: 100%;
+    }
+}
+
+.search-btn:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+}
+
+.form__group {
+    position: relative;
+    padding: 20px 0 0;
+    margin-top: 8px;
+    margin-left: auto;
+    width: 100%;
+    max-width: 180px;
+}
+
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 17px;
+    color: #fff;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+    color: transparent;
+}
+
+.form__field:placeholder-shown~.form__label {
+    font-size: 17px;
+    cursor: text;
+    top: 20px;
+}
+
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 17px;
+    color: #9b9b9b;
+    pointer-events: none;
+}
+
+.form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #116399, #38caef);
+    border-image-slice: 1;
+}
+
+.form__field:focus~.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 17px;
+    color: #38caef;
+    font-weight: 700;
+}
+
+/* reset input */
+.form__field:required,
+.form__field:invalid {
+    box-shadow: none;
+}
+
+
+#weather {
+    @apply flex flex-col;
+}
+
+#weather .overview {
+    align-self: center;
+    margin: 50px;
+}
+
+#weather .weather-card-main {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    flex-direction: column;
+    width: 300px;
+    height: 300px;
+    align-self: center;
+    border-radius: 40px;
+    border-radius: 40px;
+    background: #141414;
+    box-shadow: inset 50px 50px 100px #080808,
+        inset -50px -50px 100px #202020;
+}
+
+#weather .weather-card-main p {
+    align-self: center;
 }
