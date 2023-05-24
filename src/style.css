@@ -2,8 +2,16 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+body {
+    @apply bg-slate-900;
+}
+
 #nav {
-    @apply flex items-center border-2 border-red-500 h-[10vh] w-[100vw];
+    @apply flex border-2 gap-10 border-red-500 h-[10vh] w-[100vw];
+}
+
+#nav .app-name {
+    @apply flex self-center border justify-self-center border-red-500 ml-[50px];
 }
 
 #nav .dates {
@@ -11,11 +19,11 @@
 }
 
 #nav .search {
-    @apply justify-self-end;
+    @apply flex self-center border border-red-500 ml-auto;
 }
 
 #nav .search input {
-    @apply rounded-md h-[30px] bg-gray-100 p-7;
+    @apply self-center placeholder:italic rounded-md h-[15px] bg-gray-100 p-7;
 }
 
 #nav .search input:focus {
