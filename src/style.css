@@ -2,9 +2,13 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@800&display=swap');
+
 body {
     background: #141414;
     height: 100vh;
+    font-family: 'DM Serif Display', serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 #nav {
@@ -188,4 +192,37 @@ body {
 
 #weather .weather-card-main p {
     align-self: center;
+}
+
+#weather .extra-weather-info {
+    display: grid;
+    margin-top: 1%;
+    align-self: center;
+    width: 65vw;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 50px;
+}
+
+#weather .extra-weather-info .wind-speed,
+#weather .extra-weather-info .rain-chance,
+#weather .extra-weather-info .pressure,
+#weather .extra-weather-info .uv-index {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    width: 600px;
+    height: 300px;
+    border-radius: 50px;
+    background: #141414;
+    box-shadow: inset 20px 20px 40px #090909,
+            inset -20px -20px 40px #1f1f1f;
+}
+
+.headline {
+    align-self: center;
+    font-size: x-large;
+    color: #fff;
+    margin: 20px;
 }
