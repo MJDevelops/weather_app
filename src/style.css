@@ -213,6 +213,7 @@ body {
 #weather .extra-weather-info .pressure,
 #weather .extra-weather-info .uv-index {
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-self: center;
     align-items: center;
@@ -237,4 +238,11 @@ body {
 
 .error {
     align-self: center;
+}
+
+.data {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
