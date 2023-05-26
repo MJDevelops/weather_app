@@ -22,8 +22,25 @@ export default class WeatherAPI {
 
             return { cityName, conditionText, tempC };
         } catch (err) {
-            console.log(err);
-            return UI.constructP('City was not found.');
+            // mute error
+        }
+    }
+
+    static async getExtraWeatherData(city) {
+        try {
+            const url = baseURL + `forecast.json?key=${APIKEY}&q=${city}&days=1&aqi=no&alerts=yes`;
+            const data = await fetch(url);
+            const json = await data.json();
+            const current = json['current'];
+            const forecast = json['forecast']['forecastday'][0]['day'];
+            const pressure = current['pressure_mb'];
+            const windKPH = forecast['maxwind_kph'];
+            const uv = forecast['uv'];
+            const chanceRain = forecast['daily_chance_of_rain'];
+
+            return { pressure, windKPH, uv, chanceRain }
+        } catch (err) {
+            // mute error
         }
     }
 }
