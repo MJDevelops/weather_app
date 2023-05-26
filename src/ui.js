@@ -7,7 +7,8 @@ export default class UI {
     }
     static searchBtnEvent() {
         const btn = document.querySelector('.search-btn');
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
             UI.displayWeather();
         });
     }
