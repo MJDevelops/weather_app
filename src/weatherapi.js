@@ -1,6 +1,6 @@
 import UI from "./ui";
 
-const baseURL = "http://api.weatherapi.com/v1/";
+const baseURL = "https://api.weatherapi.com/v1/";
 const APIKEY = "2ee2dbba72b44f08a87201202232205";
 
 export default class WeatherAPI {
