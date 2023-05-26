@@ -45,6 +45,10 @@ export default class UI {
         } catch (err) {
             if (!document.querySelector('.error')) {
                 const weatherDiv = document.querySelector('#weather');
+                const weatherDisplayMain = document.querySelector('.weather-card-main');
+                const weatherDisplay = document.querySelector('.extra-weather-info');
+                weatherDisplay.classList.add('hidden');
+                weatherDisplayMain.classList.add('hidden');
                 weatherDiv.appendChild(UI.constructP('There was an error processing your request. Please try again.', 'error'));
             }
         }
