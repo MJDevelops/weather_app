@@ -4,11 +4,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@800&display=swap');
 
+* {
+    font-family: 'DM Serif Display', serif;
+    font-family: 'Poppins', sans-serif;
+}
+
 body {
     background: #141414;
     height: 100vh;
-    font-family: 'DM Serif Display', serif;
-    font-family: 'Poppins', sans-serif;
 }
 
 #nav {
@@ -212,6 +215,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-self: center;
+    align-items: center;
     width: 600px;
     height: 300px;
     border-radius: 50px;
@@ -220,9 +224,17 @@ body {
             inset -20px -20px 40px #1f1f1f;
 }
 
-.headline {
+.extra-weather-info {
     align-self: center;
     font-size: x-large;
     color: #fff;
     margin: 20px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.error {
+    align-self: center;
 }
